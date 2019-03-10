@@ -10,6 +10,17 @@ Created on Sun Mar 10 17:47:27 2019
 #Robot
 #see robot_image.py
 
+#This program will eventually:
+#1.Make image of robot
+#2.Drive with 2 wheels
+#3.Make accurate simulation of echolocation
+#4.Have AI inputed into it
+#5.Teach AI how to use echolocation so our
+#robot can use echolocation to manouvere
+#around our house. 
+
+
+
 simprops={}
 robprops={}
 winprops={}
