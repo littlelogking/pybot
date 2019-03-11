@@ -18,38 +18,77 @@ Created on Sun Mar 10 17:47:27 2019
 #5.Teach AI how to use echolocation so our
 #robot can use echolocation to manouvere
 #around our house. 
+from tkinter import *
 
 
 
-simprops={}
-robprops={}
-winprops={}
 
 def move_robot(event):
-    
+    if event.keysym == 's':
+        c.move(robot_id, 0, ROBOT_SPD)
+#        c.move(robot_id2, 0, ROBOT_SPD)   
+    elif event.keysym == 'w':
+        c.move(robot_id, 0, -ROBOT_SPD)
+#        c.move(robot_id2, 0, ROBOT_SPD)    
+    elif event.keysym == 'a':
+       c.move(robot_id, -ROBOT_SPD, 0)
+#       c.move(robot_id2, 0, ROBOT_SPD)    
+    elif event.keysym == 'd':
+       c.move(robot_id, ROBOT_SPD,0)
+#       c.move(robot_id2, 0, ROBOT_SPD)    
     #move the robot
     
 def initialisewindow():
-    
-     #this is a list 
+    HEIGHT=500
+    WIDTH=800
+    TITLE='Robot Simulation'    
+    window=Tk()
+    window.title(TITLE)
+    c = Canvas(window, height=HEIGHT, width=WIDTH)
+    c.pack()    
+    windowprops={"height":HEIGHT,"width":WIDTH,"window":window,"canvas":c}    
+    #this is a list 
     return windowprops
 
 def initialissim():
-    
-    
+    simprops={}
     #this is a list    
     return simprops
 
 
 def initialiserobot():
+    ROBOT_SPD = 10
+    X=50
+    Y=50
+    robpos={}
+    robpos[0]=X
+    robpos[1]=Y
+  
+    robot_id = c.create_polygon(180, 75, 220, 75, 200, 20, fill='red')
     
-    
+    robprops={"robotid":robot_id,"robotspeed":ROBOT_SPD,"robotpos":robpos}
     #this is a list
     return robprops
 
 
 
 
-    
+winprops=initialisewindow()
+window=winprops["window"] 
+c=winprops["canvas"]
+
+robprops=initialiserobot()
+
+
+
+ROBOT_R = 15
+MID_X = winprops["width"] / 2
+MID_Y = winprops["height"] /2
+c.move(robprops["robotid"], MID_X, MID_Y)
+#c.move(robot_id2, MID_X, MID_Y)
+
+
+
+  
 c.bind_all('<Key>',move_robot)
 window.mainloop(0)
