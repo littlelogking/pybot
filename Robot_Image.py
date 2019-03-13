@@ -5,7 +5,8 @@ Created on Tue Sep 12 18:13:36 2017
 @author: louis griffiths
 """
 
-#This program will draw an alien
+#This program will make a moving triangle controlled with WASD
+
 
 from tkinter import *
 
@@ -61,7 +62,7 @@ window.mainloop(0)
 #you can change the colours by changing fill='blue'or whatever the colour is 
 #this was from a book by carrel vordeman 
 #this program dosn't work till finished  
-
+print ("SUP")
 
 
 
