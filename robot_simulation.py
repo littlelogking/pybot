@@ -4,6 +4,16 @@ Created on Sun Mar 10 17:47:27 2019
 
 @author: suilven
 """
+
+"""
+Commenting rules
+
+mark code to be finished with TODO
+mark code to fix with FIXME
+
+"""
+
+
 #This Program is a better version of Robot_Image
 
 #Sim props:Height Width Speed Radius
@@ -21,6 +31,26 @@ Created on Sun Mar 10 17:47:27 2019
 
 from tkinter import *
 
+
+#moves 1 bullet
+#each bullet has velocity x and y
+#checks location of bullet, makes bullet bounce of objects, 
+def move_bullet(robprops, bulletprops):
+    #For each bulllet
+    
+    
+    
+        #For each obstacle
+    
+    
+    
+        #End of obstacle  loop
+    
+    
+    
+    
+    #end of bullet loop
+    return    
 
 
 
