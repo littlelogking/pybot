@@ -27,14 +27,45 @@ mark code to fix with FIXME
 #4.Have AI inputed into it
 #5.Teach AI how to use echolocation so our
 #robot can use echolocation to manouvere
-#around our house. 
+#around our house.
+ 
 
 from tkinter import *
+
+
+
+
+"""
+simulation has list of square objects/obstacles
+simulation has maximum number of bullets
+simulation has current number of bullets (numberof bullets can change)
+bullets have maximum number of bounces (absorbed after that)
+"""
+
+"""
+each bullet has x,y position
+                vx,vy speed
+
+for each bullet
+1. for each object copare position of bullet with object boundary
+2. if bullet at object boundary apply use newtons motion law to make it bounce
+3. recalculate position of bullet
+4. update bullet position on graph                
+                
+
+"""
+
+"""
+check object boundary to select correct algotirithm for updating position
+
+"""
+
 
 
 #moves 1 bullet
 #each bullet has velocity x and y
 #checks location of bullet, makes bullet bounce of objects, 
+#TODO
 def move_bullet(robprops, bulletprops):
     #For each bulllet
     
@@ -42,7 +73,7 @@ def move_bullet(robprops, bulletprops):
     
         #For each obstacle
     
-    
+            #compare_bullet_objboundary()
     
         #End of obstacle  loop
     
@@ -51,6 +82,21 @@ def move_bullet(robprops, bulletprops):
     
     #end of bullet loop
     return    
+
+def compare_bullet_objboundary():
+    
+    #object boundary is horizontal
+        #bullet moves up
+        
+        #bullet moves down
+    
+    
+    #object boundary is vertical
+        #bullet move left
+        
+        #bullet moves right
+    
+    return
 
 
 
@@ -95,7 +141,7 @@ def initialisewindow():
     #this is a list 
     return windowprops
 
-def initialissim():
+def initialisesim():
     simprops={}
     #this is a list    
     return simprops
@@ -141,6 +187,7 @@ winprops=initialisewindow()
 window=winprops["window"] 
 c=winprops["canvas"]
 
+simprops=initialisesim()
 robprops=initialiserobot(c)
 bulletprops=initialisebullet(c, robprops)
 
